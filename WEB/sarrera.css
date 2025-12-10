@@ -1,0 +1,33 @@
+.arropa {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            gap: 20px;
+            user-select: none;
+        }
+
+        .arropa img {
+            height: 500px;
+            width: auto;
+        }
+
+        .img-box {
+            position: relative;
+            display: inline-block;
+        }
+
+        .img-box img {
+            display: block;
+            width: auto;
+        }
+
+        .img-box h2 {
+            position: absolute;
+            bottom: 3.5em;
+            left: 50%;
+            transform: translateX(-50%);
+            
+            color: rgb(121, 105, 105);
+            opacity: 0.75;
+            font-size: 4rem;
+        }

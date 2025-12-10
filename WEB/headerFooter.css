@@ -1,0 +1,39 @@
+ *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            padding: 1em;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav > ul {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 20px;
+        }
+        li a{
+            color: black;
+            font-size: large;
+        }
+
+        
