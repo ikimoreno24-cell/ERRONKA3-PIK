@@ -1,33 +1,69 @@
-.arropa {
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            gap: 20px;
-            user-select: none;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .arropa img {
-            height: 500px;
-            width: auto;
-        }
+body {
+    font-family: Arial, sans-serif;
+}
 
-        .img-box {
-            position: relative;
-            display: inline-block;
-        }
 
-        .img-box img {
-            display: block;
-            width: auto;
-        }
+.hero {
+    height: 80vh;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .img-box h2 {
-            position: absolute;
-            bottom: 3.5em;
-            left: 50%;
-            transform: translateX(-50%);
-            
-            color: rgb(121, 105, 105);
-            opacity: 0.75;
-            font-size: 4rem;
-        }
+.hero-content {
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.titulu-nagusia {
+    font-size: 72px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+      transition: all 0.3s ease;
+}
+
+.button-hero1 {
+    background: red;
+    color: white;
+}
+.button-hero1:hover {
+    background: rgb(231, 24, 17);
+    transform: translatey(-2px);
+    transition: all 0.3s ease;
+}
+.button-hero2:hover {
+    background: rgb(61, 59, 59);
+    transform: translatey(-2px);
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.button-hero2 {
+    background: transparent;
+    border: 2px solid black;
+}
