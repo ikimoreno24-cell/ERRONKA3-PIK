@@ -146,3 +146,83 @@ button {
 .kategoriak-item-button .button-hero2 {
     padding: 10px 25px; 
 }
+.produktudestakatuak-titulu{
+     font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #E72D31;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align:center;
+}/* === SECCIÓN PRODUKTU DESTAKATUAK === */
+.produktudestakatuak {
+    padding: 80px 0;
+    text-align: center;
+    background-color: white; /* Asumiendo fondo blanco o claro */
+}
+
+.produktudestakatuak-kontenedorea {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.produktudestakatuak-items {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.produktudestakatuak-item {
+    flex-basis: 250px; 
+    text-align: left;
+    margin-bottom: 40px;
+    position: relative;
+    display: block;
+}
+
+.produktudestakatuak-item img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    display: block;
+}
+
+.produktudestakatuak-item-titulu {
+    font-size: 16px;
+    margin-top: 15px;
+    color: #333;
+    text-transform: lowercase; 
+}
+
+.produktudestakatuak-item-prezio {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+}
+.prezio-zaharra {
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 10px;
+}
+.produktudestakatuak-botoia-kontenedorea {
+    margin-top: 20px;
+}
+.produktudestakatuak-botoia {
+    background: #E72D31; 
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.produktudestakatuak-botoia:hover {
+    background: rgb(204, 22, 16);
+    transform: translateY(-2px);
+}
