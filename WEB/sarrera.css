@@ -55,7 +55,7 @@ button {
     color: white;
 }
 .button-hero1:hover {
-    background: rgb(204, 22, 16);
+    background:  #E72D31;
     transform: translatey(-2px);
     transition: all 0.3s ease;
 }
@@ -71,17 +71,18 @@ button {
     background: transparent;
     border: 2px solid black;
 }
+
 .kategoriak {
     padding: 80px 0; 
     text-align: center; 
-    background-color: #f8f8f8; 
+    background-color: #fdfdfd; 
 }
 
 .kategoriak-titulu {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;
-    color: #333;
+    color: #E72D31;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -93,6 +94,7 @@ button {
     max-width: 1200px; 
     margin: 0 auto; 
     flex-wrap: wrap; 
+    background-color: white;
 }
 
 .kategoriak-item {
@@ -102,6 +104,7 @@ button {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 8px;
+    padding-bottom: 20px;
 }
 
 .kategoriak-item:hover {
@@ -123,4 +126,23 @@ button {
     font-weight: bold;
     margin-top: 15px;
     color: #333;
+}
+.kategoriak-item-button {
+    margin-top: 15px;
+}
+/* botoiak ezkutatzen ditu hasieran */
+.kategoriak-item-button {
+    opacity: 0; 
+    transform: translateY(10px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+/* hover egitean bisible egiten ditu botoiak */
+.kategoriak-item:hover .kategoriak-item-button {
+    opacity: 1;
+    transform: translateY(0); 
+}
+
+.kategoriak-item-button .button-hero2 {
+    padding: 10px 25px; 
 }
