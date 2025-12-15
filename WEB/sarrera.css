@@ -11,7 +11,10 @@ body {
 
 .hero {
     height: 80vh;
-    background: #f0f0f0;
+    background-image: url('img/hero-fondo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,12 +55,13 @@ button {
     color: white;
 }
 .button-hero1:hover {
-    background: rgb(231, 24, 17);
+    background: rgb(204, 22, 16);
     transform: translatey(-2px);
     transition: all 0.3s ease;
 }
+
 .button-hero2:hover {
-    background: rgb(61, 59, 59);
+    background: black;
     transform: translatey(-2px);
     transition: all 0.3s ease;
     color: white;
