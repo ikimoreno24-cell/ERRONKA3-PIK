@@ -226,3 +226,21 @@ button {
     background: rgb(204, 22, 16);
     transform: translateY(-2px);
 }
+.produktudestakatuak-item-link {
+    text-decoration: none; 
+    color: black; 
+    display: block;
+}
+.produktudestakatuak-item-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.produktudestakatuak-item-link:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+}
+
