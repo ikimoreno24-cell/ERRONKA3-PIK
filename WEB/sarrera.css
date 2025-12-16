@@ -444,3 +444,61 @@ button {
 .bidali-botoia:hover {
     background-color: #000000;
 }
+.instagram-sekzioa {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.instagram-izenburua {
+    font-size: 32px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 50px;
+}
+
+.kaxa-multzoa {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 30px; 
+    max-width: 1000px; 
+    margin: 0 auto 50px auto; 
+}
+
+.kaxa-instagram {
+    padding-top: 100%; 
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 4px;
+    overflow: hidden;
+}
+.kaxa-instagram:hover .kaxa-irudia {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.kaxa-irudia {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(1.2) opacity(0.8); 
+}
+
+.botoi-instagrama {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #ccc;
+    color: #222;
+    background-color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.botoi-instagrama:hover {
+    background-color: #f0f0f0;
+}
