@@ -154,11 +154,11 @@ button {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align:center;
-}/* === SECCIÓN PRODUKTU DESTAKATUAK === */
+}
 .produktudestakatuak {
     padding: 80px 0;
     text-align: center;
-    background-color: white; /* Asumiendo fondo blanco o claro */
+    background-color: white; 
 }
 
 .produktudestakatuak-kontenedorea {
@@ -242,5 +242,149 @@ button {
     transform: translateY(-5px); 
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1); 
     cursor: pointer; 
+}
+.promozio-eta-iritziak {
+    padding: 60px 0;
+    background-color: #ffffff; 
+}
+
+.promozio-kontenedorea {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.promozio-blokea {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.promozio-titulu {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.eskaintzak {
+    flex: 60%; 
+    justify-content: space-between;
+    background-color: #fcebeb;
+    position: relative;
+}
+
+.promozio-deskribapen {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.promozio-irudia {
+    height: 100%; 
+    max-height: 200px; 
+    object-fit: contain; 
+    margin-left: 20px;
+}
+
+.bidalketa {
+    flex: 40%;
+    justify-content: space-between;
+    background-color: #f7f7f7; 
+}
+
+.bidalketa-testua {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.bidalketa-irudia {
+    max-width: 210px; 
+    object-fit: contain;
+}
+
+
+/* === IRITZIAK === */
+.iritziak-kontenedorea {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.iritziak-goiburua h2 {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.iritziak-goiburua p {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.iritziak-karten-gunea {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.iritzi-karta {
+    flex: 1; 
+    min-width: 300px;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.iritzi-balorazioa {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.izarrak {
+    color: gold; 
+    font-size: 1.2em;
+}
+
+.iritzi-testua {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+    min-height: 40px;
+}
+
+.bezero-profila {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.bezero-argazkia {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.bezero-izena {
+    font-weight: bold;
+    font-size: 15px;
 }
 
