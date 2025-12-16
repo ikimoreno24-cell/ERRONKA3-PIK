@@ -485,8 +485,26 @@ button {
     height: 100%;
     object-fit: cover;
     filter: brightness(1.2) opacity(0.8); 
+    transition: opacity 0.3s ease;
 }
-
+/* hasiera-egoera instagram irudiak */
+.kaxa-irudia.hover-img {
+    opacity: 0;
+    filter: none;
+}
+/* hover egoera instagram irudiak */
+kaxa-instagram:hover .kaxa-irudia.default {
+    opacity: 0;
+}
+.kaxa-instagram:hover .kaxa-irudia.hover-img {
+    opacity: 1;
+}
+/* hover efeketua kaxan*/
+.kaxa-instagram:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 .botoi-instagrama {
     display: inline-block;
     padding: 12px 30px;
