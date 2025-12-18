@@ -1,21 +1,106 @@
 const products = [
-  {
-    productName: "Kamiseta beltza",
+ {
+    productName: "Kamiseta txuria",
     price: 15,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1DbSMckrVL5R5YwwaFCEWiq6FMhipVnX4rg&s",
+    img: "img/kamiseta1.png",
     category: 'kamisetak'
   },
   {
     productName: "Kamiseta txuria",
     price: 15,
-    img: "https://static.vecteezy.com/system/resources/previews/021/104/109/non_2x/white-t-shirt-free-png.png",
+    img: "img/kamiseta2.png",
     category: 'kamisetak'
   },
+   {
+    productName: "Kamiseta txuria",
+    price: 15,
+    img: "img/kamiseta3.png",
+    category: 'kamisetak'
+  },
+   {
+    productName: "Kamiseta txuria",
+    price: 15,
+    img: "img/kamiseta4.png",
+    category: 'kamisetak'
+  },
+   {
+    productName: "Kamiseta txuria",
+    price: 15,
+    img: "img/kamiseta5.png",
+    category: 'kamisetak'
+  },
+   {
+    productName: "Kamiseta txuria",
+    price: 15,
+    img: "img/kamiseta6.png",
+    category: 'kamisetak'
+  },
+   {
+    productName: "Kamiseta txuria",
+    price: 15,
+    img: "img/kamiseta7.png",
+    category: 'kamisetak'
+  },
+   {
+    productName: "Kamiseta txuria",
+    price: 15,
+    img: "img/kamiseta8.png",
+    category: 'kamisetak'
+  },
+
   {
-    productName: "Sudadera txuria",
+    productName: "Galtzak",
     price: 30,
-    img: "https://static.vecteezy.com/system/resources/previews/009/257/254/original/white-hoodie-mockup-cutout-file-png.png",
-    category: 'sudaderak'
+    img: "img/galtzak1.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak1.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak2.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak3.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak4.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak5.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak6.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak7.png",
+    category: 'galtzak'
+  },
+  {
+    productName: "Galtzak",
+    price: 30,
+    img: "img/galtzak8.png",
+    category: 'galtzak'
   },
   {
     productName: "Sudadera beltza",
@@ -23,12 +108,7 @@ const products = [
     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwt88d9dJBBmsvB5UUL6xY9via7FXJ-2l_jA&s",
     category: 'sudaderak'
   },
-  {
-    productName: "Sudadera grisa",
-    price: 30,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFqK6fKKVxmBghn5lEb0cepBfVGC_-RUu0uw&s",
-    category: 'sudaderak'
-  },
+
   {
     productName: "Zapata beltzak",
     price: 50,
@@ -86,7 +166,7 @@ const filterProducts = (category) => {
 }
 
 const kamisetakBtn = document.getElementById('kamisetakBtn');
-const bebidasBtn = document.getElementById('sudaderakBtn');
+const galtzakBtn = document.getElementById('galtzakBtn');
 const zapatakBtn = document.getElementById('zapatakBtn');
 const txaketakBtn = document.getElementById('txaketakBtn');
 const denakBtn = document.getElementById('denakBtn');
@@ -97,8 +177,8 @@ kamisetakBtn.addEventListener('click', () => {
 });
 
 
-sudaderakBtn.addEventListener('click', () => {
-  filterProducts('sudaderak');
+galtzakBtn.addEventListener('click', () => {
+  filterProducts('galtzak');
 });
 
 zapatakBtn.addEventListener('click', () => {
