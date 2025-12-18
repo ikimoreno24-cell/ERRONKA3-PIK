@@ -109,36 +109,64 @@ const products = [
     category: 'sudaderak'
   },
 
+ 
   {
-    productName: "Zapata beltzak",
-    price: 50,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREK7xXmz6QbsNxV0vPUzHZi8TpjFbFBVYCUQ&s",
-    category: 'zapatak'
-  },
-  {
-    productName: "Zapata zuriak",
-    price: 60,
-    img: "https://png.pngtree.com/png-vector/20250115/ourmid/pngtree-men-white-sneakers-classic-and-fashionable-footwear-for-clipart-illustration-png-image_15187292.png",
-    category: 'zapatak'
-  },
-  {
-    productName: "Nike zapatak",
+    productName: "Zapatilak",
     price: 70,
-    img: "https://png.pngtree.com/png-vector/20250129/ourmid/pngtree-trendy-nike-dunk-low-shoes-comfortable-top-sneakers-png-image_15363998.png",
+    img: "img/zapatilak1.png",
     category: 'zapatak'
   },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak2.png",
+    category: 'zapatak'
+  },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak3.png",
+    category: 'zapatak'
+  },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak4.png",
+    category: 'zapatak'
+  },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak5.png",
+    category: 'zapatak'
+  },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak6.png",
+    category: 'zapatak'
+  },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak7.png",
+    category: 'zapatak'
+  },
+   {
+    productName: "Zapatilak",
+    price: 70,
+    img: "img/zapatilak8.png",
+    category: 'zapatak'
+  },
+  
   {
-    productName: "Txakera bakeroa",
+    productName: "Txaketa",
     price: 80,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZM2vqH40N0HNFwxhoRtmC5ZhpCiLpPLERQ&s",
+    img: "img/txaketa1.png",
     category: 'txaketak'
   },
-  {
-    productName: "Txakera larruzkoa",
-    price: 80,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8xkRQiAsaRvo5xeSv4zHs0fPngxp2Ikbn4g&s",
-    category: 'txaketak'
-  },
+ 
+  
 ]
 
 
