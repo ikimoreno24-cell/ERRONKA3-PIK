@@ -165,6 +165,48 @@ const products = [
     img: "img/txaketa1.png",
     category: 'txaketak'
   },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa2.png",
+    category: 'txaketak'
+  },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa3.png",
+    category: 'txaketak'
+  },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa4.png",
+    category: 'txaketak'
+  },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa5.png",
+    category: 'txaketak'
+  },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa6.png",
+    category: 'txaketak'
+  },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa7.png",
+    category: 'txaketak'
+  },
+  {
+    productName: "Txaketa",
+    price: 80,
+    img: "img/txaketa8.png",
+    category: 'txaketak'
+  },
  
   
 ]
