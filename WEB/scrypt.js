@@ -103,10 +103,52 @@ const products = [
     category: 'galtzak'
   },
   {
-    productName: "Sudadera beltza",
+    productName: " Jertsea",
     price: 30,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwt88d9dJBBmsvB5UUL6xY9via7FXJ-2l_jA&s",
-    category: 'sudaderak'
+    img: "img/jertsea1.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea2.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea3.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea4.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea5.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea6.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea7.png",
+    category: 'jertseak'
+  },
+   {
+    productName: " Jertsea",
+    price: 30,
+    img: "img/jertsea8.png",
+    category: 'jertseak'
   },
 
  
@@ -212,7 +254,6 @@ const products = [
 ]
 
 
-
 const displayProducts = (productsToShow) => {
   const shopContent = document.getElementById("shopContent")
 
@@ -239,6 +280,7 @@ const kamisetakBtn = document.getElementById('kamisetakBtn');
 const galtzakBtn = document.getElementById('galtzakBtn');
 const zapatakBtn = document.getElementById('zapatakBtn');
 const txaketakBtn = document.getElementById('txaketakBtn');
+const jertseakBtn = document.getElementById('jertseakBtn');
 const denakBtn = document.getElementById('denakBtn');
 
 
@@ -257,6 +299,9 @@ zapatakBtn.addEventListener('click', () => {
 txaketakBtn.addEventListener('click', () => {
   filterProducts('txaketak');
 });
+jertseakBtn.addEventListener('click',() =>{
+  filterProducts('jertseak');
+})
 denakBtn.addEventListener('click', () => {
   displayProducts(products)
 });
