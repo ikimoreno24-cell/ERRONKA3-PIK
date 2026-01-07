@@ -27,17 +27,44 @@
     </header>
     <body>
 <body>
-    <h1>KATEGORIEN IRAGAZKIA</h1>
-    <div class="filtro-edukia">
-      <button id="denakBtn" class="filtro-button">Denak</button>
-      <button id="kamisetakBtn" class="filtro-button">Kamisetak</button>
-    <button id="galtzakBtn" class="filtro-button">Galtzak</button>
-      <button id="jertseakBtn" class="filtro-button">Jertseak</button>
-      <button id="zapatakBtn" class="filtro-button">Zapatilak</button>
-      <button id="txaketakBtn" class="filtro-button">Txaketak</button>
-    </div>
-          <div id="shopContent"></div>
+   <div class="eduki-nagusia">
+    
+    <aside class="alboko-barra">
+        <h2 class="alboko-titulua">Kategoriak</h2>
+        
+        <div class="iragazki-taldea">
+            <label class="iragazki-aukera" >
+                <input type="checkbox"id="denakBtn" checked> Denak
+            </label>
+            <label class="iragazki-aukera" >
+                <input type="checkbox"id="kamisetakBtn"> Kamisetak
+            </label>
+            <label class="iragazki-aukera" >
+                <input type="checkbox"id="galtzakBtn"> Galtzak
+            </label>
+            <label class="iragazki-aukera" >
+                <input type="checkbox"id="jertseakBtn"> Jertseak
+            </label>
+            <label class="iragazki-aukera" >
+                <input type="checkbox"id="txaketakBtn"> Txaketak
+            </label>
+            <label class="iragazki-aukera" >
+                <input type="checkbox"id="zapatakBtn"> Zapatak
+            </label>
+        </div>
 
+        <div class="iragazki-botoiak">
+            <button class="botoia-aplikatu">Aplikatu</button>
+            <button class="botoia-garbitu">Garbitu</button>
+        </div>
+    </aside>
+
+    <main class="produktu-eremua">
+        <h2 id="categoryTitle">Produktuak</h2>
+        <div id="shopContent" class="produktu-sarea"></div>
+    </main>
+
+</div>
     </body>
       <footer>
        <footer>
