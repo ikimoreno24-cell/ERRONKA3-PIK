@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="eu">
+
+<head>
+    <title>INDIUSURBIL - Emakumeak</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width: device-width">
+    <meta name="author" content="PIK taldea">
+    <meta name="description" content="Hau INDIUSURBIL emakumeen orrialdea da">
+
+    <link rel="stylesheet" href="headerFooter.css">
+    <link rel="stylesheet" href="emakumeak.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu">
+</head>
+
+<body>
+    <header>
+        <div class="logo">INDUSURBIL</div>
+        <div class="nav">
+            <a href="gizonak.html">GIZONAK</a>
+            <a href="emakumeak.html" class="aktiboa">EMAKUMEAK</a> <span>UMEAK</span>
+            <span>OFERTAK</span>
+            <span>SASKIA</span>
+        </div>
+    </header>
+
+    <div class="eduki-nagusia">
+        
+        <aside class="alboko-barra">
+            <h2 class="alboko-titulua">Kategoriak</h2>
+            
+            <div class="iragazki-taldea">
+                <label class="iragazki-aukera">
+                    <input type="checkbox" id="denakBtn" checked> Denak
+                </label>
+                
+                <label class="iragazki-aukera">
+                    <input type="checkbox" id="jertseakBtn"> Jertseak
+                </label>
+
+                <label class="iragazki-aukera">
+                    <input type="checkbox" id="kamisetakBtn"> Kamisetak
+                </label>
+                
+                <label class="iragazki-aukera">
+                    <input type="checkbox" id="soinekoakBtn"> Soinekoak
+                </label>
+                
+                <label class="iragazki-aukera">
+                    <input type="checkbox" id="txaketakBtn"> Txaketak
+                </label>
+                
+                <label class="iragazki-aukera">
+                    <input type="checkbox" id="zapatilakBtn"> Zapatilak
+                </label>
+            </div>
+
+            <div class="iragazki-botoiak">
+                <button class="botoia-aplikatu">Aplikatu</button>
+                <button class="botoia-garbitu">Garbitu</button>
+            </div>
+        </aside>
+
+        <main class="produktu-eremua">
+            <h2 id="categoryTitle">Emakumeen Produktuak</h2>
+            <div id="shopContent" class="produktu-sarea"></div>
+        </main>
+
+    </div>
+
+    <footer>
+        <div class="footer-edukia">
+            
+            <div class="footer-blokea footer-marka">
+                <div class="footer-logo">Indiusurbil</div>
+                <p class="footer-lema">Zure modako marka,</p>
+                <div class="footer-sare-sozialak">
+                    <a href="#"><img src="img/instagram.png" alt="Instagram" class="ikonoa"></a>
+                    <a href="#"><img src="img/x.webp" alt="x" class="ikonoa"></a>
+                    <a href="#"><img src="img/pinterest.webp" alt="Pinterest" class="ikonoa"></a>
+                </div>
+            </div>
+
+            <div class="footer-blokea">
+                <h3 class="bloke-titulua">Nabigazioa</h3>
+                <ul class="footer-lista">
+                    <li><a href="#">Orri nagusia</a></li>
+                    <li><a href="#">Emakumea</a></li>
+                    <li><a href="#">Gizonak</a></li>
+                    <li><a href="#">Umeak</a></li>
+                    <li><a href="#">Ofertak</a></li>
+                    <li><a href="#">Saskia</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-blokea">
+                <h3 class="bloke-titulua">Kategoriak</h3>
+                <ul class="footer-lista">
+                    <li><a href="#">Jertseak</a></li>
+                    <li><a href="#">Kamisetak</a></li>
+                    <li><a href="#">Soinekoak</a></li>
+                    <li><a href="#">Txaketak</a></li>
+                    <li><a href="#">Zapatilak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-blokea">
+                <h3 class="bloke-titulua">Bezeroaren arreta</h3>
+                <ul class="footer-lista">
+                    <li><a href="#">Kontaktua</a></li>
+                </ul>
+
+                <h3 class="bloke-titulua newsletter-titulua">Gure newsletterrera harpidetu</h3>
+                <form class="footer-newsletter-inprimakia" action="/subscribe" method="POST">
+                    <input type="email" placeholder="Zure posta elektronikoa" class="footer-email-sarrera">
+                    <button type="submit" class="footer-bidali-botoia">Bidali</button>
+                </form>
+            </div>
+            
+        </div>
+
+        <div class="footer-azpikoa">
+            <p>© 2025 IndiUsurbil</p>
+            <div class="footer-legalak">
+                <a href="#">Pribatasun politika</a>
+                <a href="#">Terminoak eta kondizioa</a>
+                <a href="#">Abisu legala</a>
+                <a href="#">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scrypt.js"></script>
+</body>
+
+</html>

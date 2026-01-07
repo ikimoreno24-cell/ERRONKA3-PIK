@@ -338,7 +338,7 @@ const updateProducts = () => {
   // 1. Array hutsa sortu momentuan zer dagoen aukeratuta gordetzeko
   const kategoriaaktibatuak = [];
 
-  // 2. Banan-banan egiaztatu ea markatuta dauden (HAU FUNTZIO BARRUAN EGON BEHAR DA)
+  // 2. Banan-banan egiaztatu ea markatuta dauden
   if(checkboxak.kamisetak.checked) kategoriaaktibatuak.push('kamisetak');
   if(checkboxak.galtzak.checked)   kategoriaaktibatuak.push('galtzak');
   if(checkboxak.zapatak.checked)   kategoriaaktibatuak.push('zapatak');
@@ -350,7 +350,7 @@ const updateProducts = () => {
     // Ezer ez badago aukeratuta, produktu guztiak erakutsi
     displayProducts(products);
     
-    // Aukerakoa: "Denak" botoia markatu bisualki, erabiltzaileak jakin dezan
+    //"Denak" botoia markatu bisualki, erabiltzaileak jakin dezan
     if(denakBtn) denakBtn.checked = true;
 
   } else {
@@ -367,7 +367,7 @@ const updateProducts = () => {
 
 /* --- EVENT LISTENERAK --- */
 
-// Checkbox bakoitzari updateProducts funtzioa esleitu
+// Checkbox bakoitzari updateProducts funtzioa gehitu
 Object.values(checkboxak).forEach(checkbox => {
   checkbox.addEventListener('change', updateProducts);
 });
@@ -388,3 +388,189 @@ denakBtn.addEventListener('change', (e) => {
 
 // Hasierako karga (Dena erakutsi orrialdea irekitzean)
 displayProducts(products);
+/*EMAKUMEAK*/
+const products2=[
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta9.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta10.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta11.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta12.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta13.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta14.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta15.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Kamiseta txuria",
+  price: getPrezioRandom(),
+  img: "img/kamiseta16.png",
+  category: 'kamisetak'
+ },
+ {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea9.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea10.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea11.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea12.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea13.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea14.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea15.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Jertsea",
+  price: getPrezioRandom(),
+  img: "img/jertsea16.png",
+  category: 'jertseak'
+  },
+  {
+  productName: "Soinekoa",
+  price: getPrezioRandom(),
+  img: "img/soineko1.png",
+  category: 'soinekoak'
+  },
+    {
+  productName: "Soinekoa",
+  price: getPrezioRandom(),
+  img: "img/soineko2.png",
+  category: 'soinekoak'
+  },
+    {
+  productName: "Soinekoa",
+  price: getPrezioRandom(),
+  img: "img/soineko3.png",
+  category: 'soinekoak'
+  },
+    {
+  productName: "Soinekoa",
+  price: getPrezioRandom(),
+  img: "img/soineko4.png",
+  category: 'soinekoak'
+  },
+    {
+  productName: "Soinekoa",
+  price: getPrezioRandom(),
+  img: "img/soineko5.png",
+  category: 'soinekoak'
+  },
+    {
+  productName: "Soinekoa",
+  price: getPrezioRandom(),
+  img: "img/soineko6.png",
+  category: 'soinekoak'
+  },
+  {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa9.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa10.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa11.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa12.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa13.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa14.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa15.png",
+  category: 'txaketak'
+  },
+   {
+  productName: "Txaketa",
+  price: getPrezioRandom(),
+  img: "img/txaketa16.png",
+  category: 'txaketak'
+  },
+ 
+ 
+];
+
