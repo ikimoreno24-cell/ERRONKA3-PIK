@@ -31,16 +31,7 @@ body {
     color: #555;
 }
 
-.iragazki-botoia {
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    background-color: #ddd;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s;
-    font-size: 1rem;
-}
+
 
 .iragazki-botoia:hover {
     background-color: #bbb;

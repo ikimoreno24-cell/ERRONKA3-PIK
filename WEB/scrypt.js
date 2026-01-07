@@ -2,6 +2,10 @@
 function getPrezioRandom(){
   return (Math.random() * (100 - 20) + 20).toFixed(0);
 }
+/* BALORAZIO RANDOM FUNTZIOA */
+function getBalorazioRandom(){
+  return (Math.random() * (5 - 1) + 1).toFixed(1);
+}
 const products = [
   {
     productName: "Kamiseta txuria",
@@ -250,15 +254,15 @@ const products = [
     category: 'txaketak'
   },
 ];
-
+/* --- KODE BERRIA: Valorazioa behin bakarrik kalkulatu --- */
+products.forEach(product => {
+    product.rating = getBalorazioRandom();
+});
 /* --- FUNTZIO NAGUSIA: Produktuak bistaratu --- */
 const displayProducts = (productsToShow) => {
   const shopContent = document.getElementById("shopContent");
   shopContent.innerHTML = ""; // Garbitu aurreko edukia
-/*zenbaki aleatorioa sortu balorazio ezberdinak lortzeko*/
-function getBalorazioRandom(){
-  return (Math.random() * (5 - 1) + 1).toFixed(1);
-}
+
 
   productsToShow.forEach(product => {
     
@@ -277,7 +281,7 @@ function getBalorazioRandom(){
              <p class="prezioa">$ ${product.price}</p>
           </div>
           <div class="balorazioa">
-             <span class="izarra">★</span>${getBalorazioRandom()}
+             <span class="izarra">★</span>${product.rating}
           </div>
       </div>
 
@@ -288,9 +292,21 @@ function getBalorazioRandom(){
          <span class="taila-etiketa">XL</span>
       </div>
 
-      <button>Erosi</button>
+      <button class="erosi-btn">Erosi</button>
     `;
+    // --- EROSI BOTOIAREN LOGIKA (SASKIRA BIDERATU) ---
     
+    // 1. Sortu berri dugun txartelaren barruko botoia bilatu
+    const erosiBotoia = div.querySelector('.erosi-btn');
+    
+    // 2. Klik egitean 'saskia.html' orrira eraman
+    erosiBotoia.addEventListener('click', () => {
+        // Kontsolan mezua erakutsi (frogak egiteko)
+        console.log("Saskira bideratzen: " + product.productName);
+        
+        // Erabiltzailea saskiaren orrira bidali
+        window.location.href = 'saskia.html'; 
+    });
     shopContent.append(div);
   });
 };
