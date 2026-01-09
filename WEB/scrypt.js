@@ -437,74 +437,74 @@ const products = [
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak9.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak10.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak11.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak12.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak13.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak14.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak15.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
   {
     productName: "Zapatilak",
     price: getPrezioRandom(),
     img: "img/zapatilak16.png",
-    category: 'zapatak'
+    category: 'zapatilak'
   },
 
 ];
-/* --- KODE BERRIA: Valorazioa behin bakarrik kalkulatu --- */
+/* --- Balorazioa gehitu --- */
 products.forEach(product => {
     product.rating = getBalorazioRandom();
 });
+
 /* --- FUNTZIO NAGUSIA: Produktuak bistaratu --- */
 const displayProducts = (productsToShow) => {
   const shopContent = document.getElementById("shopContent");
   shopContent.innerHTML = ""; // Garbitu aurreko edukia
 
+  if (productsToShow.length === 0) {
+      shopContent.innerHTML = "<p>Ez dago produkturik aukera honekin.</p>";
+      return;
+  }
 
   productsToShow.forEach(product => {
-    
-    /* Html kodea sortzen du produktu bakoitzarentzako zeren eta html idatziz ezkero,
-    produtku bakoitzerako kodea errepikatu beharko genuelako*/
     const div = document.createElement("div");
     div.className = 'produktu-txartela';
 
     div.innerHTML = `
-      <img src="${product.img}" alt="${product.productName}">
-      
+      <img src="${product.img}" alt="${product.productName}" onerror="this.src='https://via.placeholder.com/150'"> 
       <h3>${product.productName}</h3>
-      
       <div class="txartel-xehetasunak">
           <div class="prezio-kaxa">
              <p class="prezioa">$ ${product.price}</p>
@@ -513,109 +513,87 @@ const displayProducts = (productsToShow) => {
              <span class="izarra">★</span>${product.rating}
           </div>
       </div>
-
       <div class="tailak">
          <span class="taila-etiketa">S</span>
          <span class="taila-etiketa">M</span>
          <span class="taila-etiketa">L</span>
-         <span class="taila-etiketa">XL</span>
       </div>
-
       <button class="erosi-btn">Erosi</button>
     `;
-    // --- EROSI BOTOIAREN LOGIKA (SASKIRA BIDERATU) ---
-    
-    // 1. Sortu berri dugun txartelaren barruko botoia bilatu
+
     const erosiBotoia = div.querySelector('.erosi-btn');
-    
-    // 2. Klik egitean 'saskia.html' orrira eraman
     erosiBotoia.addEventListener('click', () => {
-        // Kontsolan mezua erakutsi (frogak egiteko)
-        console.log("Saskira bideratzen: " + product.productName);
-        
-        // Erabiltzailea saskiaren orrira bidali
         window.location.href = 'saskia.html'; 
     });
     shopContent.append(div);
   });
 };
 
-/* --- IRAGAZKIA  --- */
-const filterProducts = (category) => {
-  const productsToShow = products.filter(product => product.category === category);
-  console.log(productsToShow);
-  displayProducts(productsToShow);
-};
 
-
-
-
-/*CHECKBOXAK*/
-/* --- DOM ELEMENTUAK --- */
+/* --- DOM ELEMENTUAK  --- */
 const checkboxak = {
   kamisetak: document.getElementById('kamisetakBtn'),
   galtzak: document.getElementById('galtzakBtn'),
-  zapatak: document.getElementById('zapatakBtn'),
+  zapatak: document.getElementById('zapatakBtn'),   
   txaketak: document.getElementById('txaketakBtn'),
   jertseak: document.getElementById('jertseakBtn'),
   soinekoak: document.getElementById('soinekoakBtn'),
-  zapatilak: document.getElementById('zapatilakBtn')
+  zapatilak: document.getElementById('zapatilakBtn'),
+  // ZUZENDUTA: 'zapatilakBtn' kendu dut hemen, HTMLan ez duzulako jarri eta errorea ematen zuelako.
+  // 'zapatakBtn' nahikoa da oinetakoentzat.
 };
 
 const denakBtn = document.getElementById('denakBtn');
 
-/* --- CHECKBOX BAT ALDATZEAN EXEKUTATZEN DEN FUNTZIOA --- */
+/* --- UPDATE PRODUCTS FUNTZIOA (LOGIKA ZUZENDUTA) --- */
 const updateProducts = () => {
-  // 1. Array hutsa sortu momentuan zer dagoen aukeratuta gordetzeko
   const kategoriaaktibatuak = [];
 
-  // 2. Banan-banan egiaztatu ea markatuta dauden (HAU FUNTZIO BARRUAN EGON BEHAR DA)
-  if(checkboxak.kamisetak.checked) kategoriaaktibatuak.push('kamisetak');
-  if(checkboxak.galtzak.checked)   kategoriaaktibatuak.push('galtzak');
-  if(checkboxak.zapatak.checked)   kategoriaaktibatuak.push('zapatak');
-  if(checkboxak.txaketak.checked)  kategoriaaktibatuak.push('txaketak');
-  if(checkboxak.jertseak.checked)  kategoriaaktibatuak.push('jertseak');
+  // Egiaztatu banan-banan (NULL diren begiratu gabe kraskatu ez dezan)
+  if(checkboxak.kamisetak && checkboxak.kamisetak.checked) kategoriaaktibatuak.push('kamisetak');
+  if(checkboxak.galtzak && checkboxak.galtzak.checked)     kategoriaaktibatuak.push('galtzak');
+  if(checkboxak.jertseak && checkboxak.jertseak.checked)   kategoriaaktibatuak.push('jertseak');
+  if(checkboxak.txaketak && checkboxak.txaketak.checked)   kategoriaaktibatuak.push('txaketak');
+  if(checkboxak.zapatak && checkboxak.zapatak.checked)     kategoriaaktibatuak.push('zapatak');
+  if(checkboxak.zapatilak && checkboxak.zapatilak.checked) kategoriaaktibatuak.push('zapatilak');
+  if(checkboxak.soinekoak && checkboxak.soinekoak.checked) kategoriaaktibatuak.push('soinekoak');
 
-  // 3. Iragazteko logika
+  console.log("Aktibatutako kategoriak:", kategoriaaktibatuak); // Debug egiteko
+
+  // Iragazteko logika
   if (kategoriaaktibatuak.length === 0) {
-    // Ezer ez badago aukeratuta, produktu guztiak erakutsi
     displayProducts(products);
-    
-    // Aukerakoa: "Denak" botoia markatu bisualki, erabiltzaileak jakin dezan
     if(denakBtn) denakBtn.checked = true;
-
   } else {
-    // Kategoriaren bat aukeratuta badago, iragazi
     const productsToShow = products.filter(product => 
       kategoriaaktibatuak.includes(product.category)
     );
     displayProducts(productsToShow);
-
-    // "Denak" botoia desmarkatu, iragazten ari garelako
     if(denakBtn) denakBtn.checked = false;
   }
 };
 
 /* --- EVENT LISTENERAK --- */
-
-// Checkbox bakoitzari updateProducts funtzioa esleitu
+// Segurtasunarekin gehitu (elementua existitzen bada bakarrik)
 Object.values(checkboxak).forEach(checkbox => {
-  checkbox.addEventListener('change', updateProducts);
-});
-
-/* --- "DENAK" BOTOIAREN LOGIKA BEREZIA --- */
-denakBtn.addEventListener('change', (e) => {
-  if (e.target.checked) {
-    // 1. Beste checkbox guztiak desmarkatu bisualki
-    Object.values(checkboxak).forEach(box => box.checked = false);
-    
-    // 2. Produktu guztiak erakutsi
-    displayProducts(products);
-  } else {
-    // "Denak" eskuz desmarkatzen bada, updateProducts deitu egoera eguneratzeko
-    updateProducts();
+  if (checkbox) { // Garrantzitsua: null bada ez saiatu gehitzen
+      checkbox.addEventListener('change', updateProducts);
   }
 });
 
-// Hasierako karga (Dena erakutsi orrialdea irekitzean)
+/* --- "DENAK" BOTOIA --- */
+if (denakBtn) {
+    denakBtn.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        Object.values(checkboxak).forEach(box => {
+            if(box) box.checked = false;
+        });
+        displayProducts(products);
+      } else {
+        updateProducts();
+      }
+    });
+}
+
+// Hasierako karga
 displayProducts(products);
