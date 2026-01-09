@@ -6,7 +6,6 @@ function getPrezioRandom(){
 function getBalorazioRandom(){
   return (Math.random() * (5 - 1) + 1).toFixed(1);
 }
-/*GIZONEZKOEN PRODUKTUAK*/
 const products = [
   {
     productName: "Kamiseta txuria",
@@ -254,11 +253,7 @@ const products = [
     img: "img/txaketa8.png",
     category: 'txaketak'
   },
-  
-];
-/*EMAKUMEAK*/
-const products2=[
- {
+   {
   productName: "Kamiseta txuria",
   price: getPrezioRandom(),
   img: "img/kamiseta9.png",
@@ -487,28 +482,14 @@ const products2=[
     category: 'zapatak'
   },
 
- 
 ];
-/* --- LOGIKA: ZEIN LISTA ERABILI? --- */
-// Begiratu ea URLak "emakumeak.html" dion. Hala bada, emakumeen lista kargatu.
-let currentProducts = [];
-
-if (window.location.pathname.includes("emakumeak")) {
-    currentProducts = products2;
-    console.log("Emakumeen orria detektatuta");
-} else {
-    currentProducts = products;
-    console.log("Gizonen orria detektatuta ");
-}
-
-/* --- KODE BERRIA: Balorazioa behin bakarrik kalkulatu --- */
-currentProducts.forEach(product => {
+/* --- KODE BERRIA: Valorazioa behin bakarrik kalkulatu --- */
+products.forEach(product => {
     product.rating = getBalorazioRandom();
 });
 /* --- FUNTZIO NAGUSIA: Produktuak bistaratu --- */
 const displayProducts = (productsToShow) => {
   const shopContent = document.getElementById("shopContent");
-  if (!shopContent) return;
   shopContent.innerHTML = ""; // Garbitu aurreko edukia
 
 
@@ -573,16 +554,10 @@ const filterProducts = (category) => {
 /* --- DOM ELEMENTUAK --- */
 const checkboxak = {
   kamisetak: document.getElementById('kamisetakBtn'),
-  jertseak:  document.getElementById('jertseakBtn'),
-  txaketak:  document.getElementById('txaketakBtn'),
-  
-  // Gizonezkoena bakarrik
-  galtzak:   document.getElementById('galtzakBtn'),
-  zapatak:   document.getElementById('zapatakBtn'),
-  
-  // Emakumezkoena bakarrik
-  soinekoak: document.getElementById('soinekoakBtn'),
-  zapatilak: document.getElementById('zapatilakBtn')
+  galtzak: document.getElementById('galtzakBtn'),
+  zapatak: document.getElementById('zapatakBtn'),
+  txaketak: document.getElementById('txaketakBtn'),
+  jertseak: document.getElementById('jertseakBtn')
 };
 
 const denakBtn = document.getElementById('denakBtn');
@@ -592,29 +567,24 @@ const updateProducts = () => {
   // 1. Array hutsa sortu momentuan zer dagoen aukeratuta gordetzeko
   const kategoriaaktibatuak = [];
 
-  // 2. Banan-banan egiaztatu ea markatuta dauden
-  if(checkboxak.kamisetak && checkboxak.kamisetak.checked) kategoriaaktibatuak.push('kamisetak');
-  if(checkboxak.jertseak && checkboxak.jertseak.checked)   kategoriaaktibatuak.push('jertseak');
-  if(checkboxak.txaketak && checkboxak.txaketak.checked)   kategoriaaktibatuak.push('txaketak');
-  
-  // Gizonak
-  if(checkboxak.galtzak && checkboxak.galtzak.checked)     kategoriaaktibatuak.push('galtzak');
-  if(checkboxak.zapatak && checkboxak.zapatak.checked)     kategoriaaktibatuak.push('zapatak');
-  
-  // Emakumeak
-  if(checkboxak.soinekoak && checkboxak.soinekoak.checked) kategoriaaktibatuak.push('soinekoak');
-  if(checkboxak.zapatilak && checkboxak.zapatilak.checked) kategoriaaktibatuak.push('zapatak');
+  // 2. Banan-banan egiaztatu ea markatuta dauden (HAU FUNTZIO BARRUAN EGON BEHAR DA)
+  if(checkboxak.kamisetak.checked) kategoriaaktibatuak.push('kamisetak');
+  if(checkboxak.galtzak.checked)   kategoriaaktibatuak.push('galtzak');
+  if(checkboxak.zapatak.checked)   kategoriaaktibatuak.push('zapatak');
+  if(checkboxak.txaketak.checked)  kategoriaaktibatuak.push('txaketak');
+  if(checkboxak.jertseak.checked)  kategoriaaktibatuak.push('jertseak');
+
   // 3. Iragazteko logika
   if (kategoriaaktibatuak.length === 0) {
     // Ezer ez badago aukeratuta, produktu guztiak erakutsi
-    displayProducts(currentProducts);
+    displayProducts(products);
     
-    //"Denak" botoia markatu bisualki, erabiltzaileak jakin dezan
+    // Aukerakoa: "Denak" botoia markatu bisualki, erabiltzaileak jakin dezan
     if(denakBtn) denakBtn.checked = true;
 
   } else {
     // Kategoriaren bat aukeratuta badago, iragazi
-    const productsToShow = currentProducts.filter(product => 
+    const productsToShow = products.filter(product => 
       kategoriaaktibatuak.includes(product.category)
     );
     displayProducts(productsToShow);
@@ -626,19 +596,19 @@ const updateProducts = () => {
 
 /* --- EVENT LISTENERAK --- */
 
-// Checkbox bakoitzari updateProducts funtzioa gehitu
+// Checkbox bakoitzari updateProducts funtzioa esleitu
 Object.values(checkboxak).forEach(checkbox => {
-  if (checkbox) checkbox.addEventListener('change', updateProducts);
+  checkbox.addEventListener('change', updateProducts);
 });
 
 /* --- "DENAK" BOTOIAREN LOGIKA BEREZIA --- */
 denakBtn.addEventListener('change', (e) => {
   if (e.target.checked) {
     // 1. Beste checkbox guztiak desmarkatu bisualki
-    Object.values(checkboxak).forEach(box => { if (box) box.checked = false; });
-
+    Object.values(checkboxak).forEach(box => box.checked = false);
+    
     // 2. Produktu guztiak erakutsi
-    displayProducts(currentProducts);
+    displayProducts(products);
   } else {
     // "Denak" eskuz desmarkatzen bada, updateProducts deitu egoera eguneratzeko
     updateProducts();
@@ -646,4 +616,4 @@ denakBtn.addEventListener('change', (e) => {
 });
 
 // Hasierako karga (Dena erakutsi orrialdea irekitzean)
-displayProducts(currentProducts);
+displayProducts(products);
