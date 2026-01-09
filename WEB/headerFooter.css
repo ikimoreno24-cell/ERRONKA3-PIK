@@ -5,45 +5,122 @@
 
             box-sizing: border-box;
         }
-        
+/* --- ESTILO OROKORRAK (Header) --- */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     background: white;
+    position: relative; /* Garrantzitsua menua kokatzeko */
+    z-index: 1000;
 }
 
-.logo {
+.logoa {
     font-size: 24px;
     font-weight: bold;
 }
 
-.nav {
-    display: flex;
+/* Menú Hanburgesa Ikonoa  */
+.menu-ikonoa {
+    display: block; 
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Mostrar la navegación por defecto (escritorio). En móvil la ocultaremos en la media query. */
+.nabigazioa {
+    display: none; /* Oculto por defecto; se muestra cuando tiene la clase .aktiboa */
     gap: 30px;
     align-items: center;
+    flex-direction: row;
 }
 
-.nav span {
+/* Nabigazio loturak (Link-ak) */
+.nabigazioa a {
+   text-decoration: none;
+    color: black;
     font-weight: bold;
     font-size: 16px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
-.nav :hover { 
+
+.nabigazioa a:hover {
     color: red;
-    cursor: pointer;
-    transform: translatey(-2px);
-    transition: all 0.3s ease;
 }
 
-    
+/* ORDENAGAILUA (Pantaila handiak > 768px) */
+@media (min-width: 769px) {
+   /* Ordenagailuan por defekto hamburguesa menua erakusten dugu*/
+   .material-symbols-outlined.menu-ikonoa{
+        display: none; /* hmaburguesa menua ez erakutsi ordenagailuan */
+    }
 
- nav > ul {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    gap: 20px;
+    .nabigazioa {
+        display: flex ; /* ordenagailuan beti erakutsi */
+        gap: 30px;
+        align-items: center;
+        position: static;
+        flex-direction: row;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    /* itxi ikonoa ordenagailuan ez agertzea */
+    .nabigazio-close {
+        display: none;
+    }
+}
+
+/*  MUGIKORRA (Pantaila txikiak <= 768px)  */
+@media (max-width: 768px) {
+    
+    /* 1. Erakutsi Hanburgesa ikonoa */
+    .menu-ikonoa {
+        display: block; 
+    }
+
+    /* 2. EZKUTATU Menua defektuz */
+    .nabigazioa {
+        display: none; /* HAU DA GAKOA: Hasieran ezkutuan */
+        
+        /* Menuaren itxura irekitzean */
+        position: absolute;
+        top: 100%; /* Header-aren azpian */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column; /* Bertikalean */
+        align-items: center;
+        padding: 20px 0;
+        border-top: 1px solid #eee;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Close ikonoa menuko goialdean */
+    .nabigazio-close {
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        font-size: 28px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /* 3. Erakutsi menua 'aktiboa' klasea duenean (JS bidez) */
+    .nabigazioa.aktiboa {
+        display: flex;
+    }
+
+    .nabigazioa a {
+        display: block;
+        padding: 15px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
 }
  li a{
        color: black;

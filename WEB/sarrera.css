@@ -146,11 +146,11 @@ button {
 
 
 a.button-hero2 {
-    text-decoration: none; /* Linkaren azpimarra kendu */
-    color: #333; /* Testuaren kolorea (beltza edo nahi duzuna) */
-    background-color: transparent; /* Fondo gardena */
-    border: 2px solid #333; /* Ertz beltza */
-    padding: 10px 30px; /* Barneko tartea */
+    text-decoration: none; 
+    color: #333; 
+    background-color: transparent; 
+    border: 2px solid #333; 
+    padding: 10px 30px; 
     border-radius: 50px; 
     font-weight: bold;
     display: inline-block; 
