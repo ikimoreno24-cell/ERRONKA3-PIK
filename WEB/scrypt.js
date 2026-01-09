@@ -481,7 +481,90 @@ const products = [
     img: "img/zapatilak16.png",
     category: 'zapatilak'
   },
-
+  {
+    productName: "Kamiseta umea",
+    price: getPrezioRandom(),
+    img: "img/umekamiseta1.png",
+    category: 'umekamiseta'
+  },
+  {
+    productName: "Kamiseta umea",
+    price: getPrezioRandom(),
+    img: "img/umekamiseta2.png",
+    category: 'umekamiseta'
+  },
+  {
+    productName: "Kamiseta umea",
+    price: getPrezioRandom(),
+    img: "img/umekamiseta3.png",
+    category: 'umekamiseta'
+  },
+  {
+    productName: "Kamiseta umea",
+    price: getPrezioRandom(),
+    img: "img/umekamiseta4.png",
+    category: 'umekamiseta'
+  },
+  {
+    productName: "Kamiseta umea",
+    price: getPrezioRandom(),
+    img: "img/umekamiseta5.png",
+    category: 'umekamiseta'
+  },
+  {
+    productName: "Kamiseta umea",
+    price: getPrezioRandom(),
+    img: "img/umekamiseta6.png",
+    category: 'umekamiseta'
+  },
+  {
+    productName: "Ume zapatila",
+    price: getPrezioRandom(),
+    img: "img/umezapatila1.png",
+    category: 'umezapatila'
+  },
+  {
+    productName: "Ume zapatila",
+    price: getPrezioRandom(),
+    img: "img/umezapatila2.png",
+    category: 'umezapatila'
+  },
+  {
+    productName: "Ume zapatila",
+    price: getPrezioRandom(),
+    img: "img/umezapatila3.png",
+    category: 'umezapatila'
+  },
+  {
+    productName: "Ume zapatila",
+    price: getPrezioRandom(),
+    img: "img/umezapatila4.png",
+    category: 'umezapatila'
+  },
+{
+    productName: "Ume galtza",
+    price: getPrezioRandom(),
+    img: "img/galtzak13.png",
+    category: 'umegaltza'
+  },
+  {
+    productName: "Ume galtza",
+    price: getPrezioRandom(),
+    img: "img/galtzak14.png",
+    category: 'umegaltza'
+  },
+  {
+    productName: "Ume galtza",
+    price: getPrezioRandom(),
+    img: "img/galtzak15.png",
+    category: 'umegaltza'
+  },
+  {
+    productName: "Ume galtza",
+    price: getPrezioRandom(),
+    img: "img/galtzak16.png",
+    category: 'umegaltza'
+  },
 ];
 /* --- Balorazioa gehitu --- */
 products.forEach(product => {
@@ -517,6 +600,7 @@ const displayProducts = (productsToShow) => {
          <span class="taila-etiketa">S</span>
          <span class="taila-etiketa">M</span>
          <span class="taila-etiketa">L</span>
+         <span class="taila-etiketa">XL</span>
       </div>
       <button class="erosi-btn">Erosi</button>
     `;
@@ -539,17 +623,19 @@ const checkboxak = {
   jertseak: document.getElementById('jertseakBtn'),
   soinekoak: document.getElementById('soinekoakBtn'),
   zapatilak: document.getElementById('zapatilakBtn'),
-  // ZUZENDUTA: 'zapatilakBtn' kendu dut hemen, HTMLan ez duzulako jarri eta errorea ematen zuelako.
-  // 'zapatakBtn' nahikoa da oinetakoentzat.
+/* Umeen orrialdekoak (Izen desberdinak erabili ditugu gatazkarik ez egoteko) */
+  umeKamisetak: document.getElementById('umekamisetakBtn'),
+  umeGaltzak: document.getElementById('umegaltzakBtn'),
+  umeZapatilak: document.getElementById('umezapatilakBtn'),
 };
-
-const denakBtn = document.getElementById('denakBtn');
-
-/* --- UPDATE PRODUCTS FUNTZIOA (LOGIKA ZUZENDUTA) --- */
+/* denak botoiak */
+const denakBtn = document.getElementById('denakBtn'); // Helduena
+const denakumeBtn = document.getElementById('denakumeBtn'); // Umeena
+/*  UPDATE PRODUCTS FUNTZIOA (LOGIKA ZUZENDUTA) */
 const updateProducts = () => {
   const kategoriaaktibatuak = [];
 
-  // Egiaztatu banan-banan (NULL diren begiratu gabe kraskatu ez dezan)
+  /* Egiaztatu banan-banan (NULL diren begiratu gabe kraseatu ez dezan) */
   if(checkboxak.kamisetak && checkboxak.kamisetak.checked) kategoriaaktibatuak.push('kamisetak');
   if(checkboxak.galtzak && checkboxak.galtzak.checked)     kategoriaaktibatuak.push('galtzak');
   if(checkboxak.jertseak && checkboxak.jertseak.checked)   kategoriaaktibatuak.push('jertseak');
@@ -557,19 +643,29 @@ const updateProducts = () => {
   if(checkboxak.zapatak && checkboxak.zapatak.checked)     kategoriaaktibatuak.push('zapatak');
   if(checkboxak.zapatilak && checkboxak.zapatilak.checked) kategoriaaktibatuak.push('zapatilak');
   if(checkboxak.soinekoak && checkboxak.soinekoak.checked) kategoriaaktibatuak.push('soinekoak');
-
+/* Umeen kategoriak*/
+  if(checkboxak.umeKamisetak && checkboxak.umeKamisetak.checked) kategoriaaktibatuak.push('umekamiseta');
+  if(checkboxak.umeGaltzak && checkboxak.umeGaltzak.checked)     kategoriaaktibatuak.push('umegaltza');
+  if(checkboxak.umeZapatilak && checkboxak.umeZapatilak.checked) kategoriaaktibatuak.push('umezapatila');
   console.log("Aktibatutako kategoriak:", kategoriaaktibatuak); // Debug egiteko
 
-  // Iragazteko logika
+  /* Iragazteko logika */
   if (kategoriaaktibatuak.length === 0) {
+    // Ezer ez badago aukeratuta, denak erakutsi (edo orriaren arabera logika aldatu)
     displayProducts(products);
+    
+    // Botoiak aktibatu bisualki
     if(denakBtn) denakBtn.checked = true;
+    if(denakumeBtn) denakumeBtn.checked = true;
   } else {
     const productsToShow = products.filter(product => 
       kategoriaaktibatuak.includes(product.category)
     );
     displayProducts(productsToShow);
+    
+    // Botoiak desaktibatu
     if(denakBtn) denakBtn.checked = false;
+    if(denakumeBtn) denakumeBtn.checked = false;
   }
 };
 
@@ -581,13 +677,18 @@ Object.values(checkboxak).forEach(checkbox => {
   }
 });
 
-/* --- "DENAK" BOTOIA --- */
+/* --- "DENAK" BOTOIA (HELDUAK) --- */
 if (denakBtn) {
     denakBtn.addEventListener('change', (e) => {
       if (e.target.checked) {
-        Object.values(checkboxak).forEach(box => {
-            if(box) box.checked = false;
-        });
+        // Desmarkatu helduen beste guztiak
+        if(checkboxak.kamisetak) checkboxak.kamisetak.checked = false;
+        if(checkboxak.galtzak) checkboxak.galtzak.checked = false;
+        if(checkboxak.jertseak) checkboxak.jertseak.checked = false;
+        if(checkboxak.txaketak) checkboxak.txaketak.checked = false;
+        if(checkboxak.zapatilak) checkboxak.zapatilak.checked = false;
+        if(checkboxak.soinekoak) checkboxak.soinekoak.checked = false;
+        
         displayProducts(products);
       } else {
         updateProducts();
@@ -595,5 +696,50 @@ if (denakBtn) {
     });
 }
 
-// Hasierako karga
-displayProducts(products);
+/* --- "DENAK" BOTOIA (UMEAK) --- */
+if (denakumeBtn) {
+    denakumeBtn.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        // Desmarkatu umeen beste guztiak
+        if(checkboxak.umeKamisetak) checkboxak.umeKamisetak.checked = false;
+        if(checkboxak.umeGaltzak) checkboxak.umeGaltzak.checked = false;
+        if(checkboxak.umeZapatilak) checkboxak.umeZapatilak.checked = false;
+
+        // Hemen agian bakarrik umeenak erakutsi nahiko zenituzke, 
+        // baina oraingoz produktu guztiak erakusten ditu.
+        // Hobetzeko: products.filter(...) erabili hemen umeenak bakarrik ateratzeko.
+        displayProducts(products); 
+      } else {
+        updateProducts();
+      }
+    });
+}
+
+/* --- HASIERAKO KARGA: ORRIALDEAREN ARABERA --- */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Begiratu ea zein orrialdetan gauden (URLan "umeak.html" jartzen duen)
+    if (window.location.pathname.includes("umeak.html")) {
+        
+        console.log("Umeen orrialdean gaude: Umeen produktuak bakarrik kargatzen...");
+        
+        // Iragazi bakarrik umeen kategoriak dituzten produktuak
+        const umeenKategoriak = ['umekamiseta', 'umegaltza', 'umezapatila'];
+        
+        const umeenProduktuak = products.filter(product => 
+            umeenKategoriak.includes(product.category)
+        );
+        
+        // Erakutsi iragazitakoak bakarrik
+        displayProducts(umeenProduktuak);
+
+        // Ziurtatu "Denak" botoia markatuta dagoela
+        if (denakumeBtn) denakumeBtn.checked = true;
+
+    } else {
+        // Beste edozein orrialdetan bagaude (adibidez index.html edo produktuak.html), 
+        // erakutsi produktu GUZTIAK (edo nahi duzun logika).
+        console.log("Orrialde orokorra: Produktu guztiak kargatzen...");
+        displayProducts(products);
+    }
+});
