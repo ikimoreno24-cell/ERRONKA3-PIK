@@ -129,6 +129,7 @@ button {
 }
 .kategoriak-item-button {
     margin-top: 15px;
+    border-radius: 25px;
 }
 /* botoiak ezkutatzen ditu hasieran */
 .kategoriak-item-button {
@@ -143,8 +144,18 @@ button {
     transform: translateY(0); 
 }
 
-.kategoriak-item-button .button-hero2 {
-    padding: 10px 25px; 
+
+a.button-hero2 {
+    text-decoration: none; 
+    color: #333; 
+    background-color: transparent; 
+    border: 2px solid #333; 
+    padding: 10px 30px; 
+    border-radius: 50px; 
+    font-weight: bold;
+    display: inline-block; 
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 .produktudestakatuak-titulu{
      font-size: 30px;
