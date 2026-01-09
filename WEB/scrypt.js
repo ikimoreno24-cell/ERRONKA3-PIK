@@ -557,7 +557,9 @@ const checkboxak = {
   galtzak: document.getElementById('galtzakBtn'),
   zapatak: document.getElementById('zapatakBtn'),
   txaketak: document.getElementById('txaketakBtn'),
-  jertseak: document.getElementById('jertseakBtn')
+  jertseak: document.getElementById('jertseakBtn'),
+  soinekoak: document.getElementById('soinekoakBtn'),
+  zapatilak: document.getElementById('zapatilakBtn')
 };
 
 const denakBtn = document.getElementById('denakBtn');
